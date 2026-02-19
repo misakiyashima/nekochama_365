@@ -30,7 +30,7 @@ test:
   collation: utf8mb4_unicode_ci
   database: <%= ENV.fetch("TEST_DB_NAME", "rails_test") %>
   username: <%= ENV.fetch("TEST_DB_USER", "root") %>
-  password: <%= ENV.fetch("TEST_DB_PASSWORD", "") %>
+  password: <%= ENV.fetch("TEST_DB_PASSWORD", "password") %>
   host: <%= ENV.fetch("TEST_DB_HOST", "db") %>
   port: <%= ENV.fetch("TEST_DB_PORT", 3306) %>
 
