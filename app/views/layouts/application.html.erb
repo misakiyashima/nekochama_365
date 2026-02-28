@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Myapp" %></title>
+    <title><%= content_for(:title) || "ねことわたし" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -16,11 +16,15 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
 
+  <header>
+  <%= render 'shared/header' %>
+  </header>
+
   <body>
     <%= yield %>
   </body>
-  <body class="bg-blue-600">
-    <%= yield %>
-  </body>
+
+  <footer>
+  <%= render 'shared/footer' %>
 
 </html>
