@@ -1,6 +1,9 @@
 @tailwind base;
 @tailwind components;
-
-@import "top_style";
-
 @tailwind utilities;
+
+@layer components {
+  .custom-h2 {
+    font-size: 48px;
+  }
+}
