@@ -1,6 +1,50 @@
 @tailwind base;
 @tailwind components;
-
-@import "top_style";
-
 @tailwind utilities;
+
+@layer components {
+  .custom-h2 {
+    font-size: 48px;
+  }
+
+/* リセットCSS（基本設定） */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+/* body要素にFlexboxを適用 */
+  body {
+    display: flex;           /* フレックスコンテナにする */
+    flex-direction: column;  /* 縦方向に要素を配置 */
+    min-height: 100vh;      /* 画面の高さを最低限確保 */
+    font-family: Arial, sans-serif;
+  }
+
+/* ヘッダーのスタイル */
+  header {
+    background-color: #FFCCCC;
+    color: white;
+    padding: 1rem;
+    /* flexの初期値により、必要な分だけ高さを取る */
+  }
+
+/* メインコンテンツのスタイル */
+  main {
+    flex: 1;                /* 残りのスペースをすべて占有 */
+    padding: 2rem;
+    background-color: #f9f9f9;
+    /* ここが伸縮してフッターを下に押し下げる */
+  }
+
+/* フッターのスタイル */
+  footer {
+    background-color: #FFCCCC;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    /* flexの初期値により、必要な分だけ高さを取る */
+  }
+
+}

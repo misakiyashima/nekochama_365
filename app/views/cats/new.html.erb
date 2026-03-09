@@ -1,0 +1,23 @@
+<body>
+<main>
+<div style="text-align: center;">
+<h1>ねこの登録</h1>
+<%= form_with model: @cats do |form| %>
+  <div>
+    <%= form.label :おなまえ %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :birthday,"生まれた日" %>
+    <%= form.date_field :start_date %>
+  </div>
+  <div>
+    <%= form.submit "登録", class: "py-2 px-4 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 transition" %>
+  </div>
+<% end %>
+   <%= link_to 'homeへ戻る', root_path,
+     class: "inline-block frex-none group h-10 items-center justify-center rounded-md border border-pink-200 bg-gradient-to-b from-pink-50 via-pink-100 to-pink-50 px-4 text-pink-900 hover:bg-gradient-to-b hover:from-pink-100 hover:via-pink-100 hover:to-pink-100 active:shadow-inner group-active:[transform:translate3d(0,1px,0)]"
+   %>
+</div>
+</main>
+</body>

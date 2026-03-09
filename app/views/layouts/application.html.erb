@@ -12,19 +12,20 @@
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" href="/favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="/favicon.png">
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "application", type: "module" %>
   </head>
 
-  <header>
-  <%= render 'shared/header' %>
-  </header>
-
   <body>
+    <header>
+      <%= render 'shared/header' %>
+    </header>
+
     <%= yield %>
+
+    <footer>
+      <%= render 'shared/footer' %>
+    </footer>
   </body>
-
-  <footer>
-  <%= render 'shared/footer' %>
-
 </html>
