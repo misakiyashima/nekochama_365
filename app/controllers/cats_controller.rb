@@ -1,21 +1,25 @@
 class CatsController < ApplicationController
   def index
-  @cats = cats.all
+    @cats = Cat.all
   end
 
   def new
-    @cats = Cat.new
+    @cat = Cat.new
   end
 
   def create
-    @cats = Cat.new(cats_params)
-    @cats.save
-    flash[:alert] = 'ねこが登録されました'
-    redirect_to root_path 
+    @cat = Cat.new(cat_params)
+    if @cat.save
+      flash[:alert] = "ねこが登録されました"
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   private
-def cats_params
-  params.require(:cat).permit(:name, :birthday)
-end
+
+  def cat_params
+    params.require(:cat).permit(:name, :birthday)
+  end
 end

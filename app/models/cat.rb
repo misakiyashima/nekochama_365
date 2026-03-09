@@ -1,4 +1,4 @@
 class Cat < ApplicationRecord
-　validate :name, presence:true
-  validate :start_date, presence:true
+  validates :name, presence: true
+  validates :birthday, presence: true
 end
