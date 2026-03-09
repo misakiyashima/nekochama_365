@@ -8,8 +8,10 @@ class CatsController < ApplicationController
   end
 
   def create
-    @cats = cats.new(cats_params)
+    @cats = Cat.new(cats_params)
     @cats.save
+    flash[:alert] = 'ねこが登録されました'
+    redirect_to root_path 
   end
 
   private
