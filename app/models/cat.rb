@@ -8,7 +8,7 @@ class Cat < ApplicationRecord
   end
 
   def cat_age_in_human_years
-    days = days_since_birthday
+    days = days_since_birth
     return nil unless days
     months = (days / 30.44)  # 1か月≒30.44(平均値)
 
@@ -17,12 +17,12 @@ class Cat < ApplicationRecord
      elsif months < 24
      (15 + 9 * ((months - 12) / 12)).round
      else
-     (24 + 4*(months - 24) / 12)).round
+     (24 + 4 * ((months - 24) / 12)).round
     end
   end
 
   def cat_age
-    days = days_since_birthday
+    days = days_since_birth
     return nil unless days
     years = (days / 365.25).floor  # 年を整数で出す
     remain = days - (years * 365.25).round  # 年分を引いた残りの日数
