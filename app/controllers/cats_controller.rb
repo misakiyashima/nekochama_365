@@ -17,6 +17,7 @@ class CatsController < ApplicationController
     end
   end
 
+
   private
 
   def cat_params
