@@ -10,12 +10,13 @@ class CatsController < ApplicationController
   def create
     @cat = Cat.new(cat_params)
     if @cat.save
-      flash[:alert] = "ねこが登録されました"
+      flash[:notice] = "ねこが登録されました"
       redirect_to root_path
     else
       render :new
     end
   end
+
 
   private
 
