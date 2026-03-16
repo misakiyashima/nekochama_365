@@ -27,11 +27,11 @@ class Cat < ApplicationRecord
     years = (days / 365.25).floor  # 年を整数で出す
     remain = days - (years * 365.25).round  # 年分を引いた残りの日数
 
-    months = (remain / 30.44).floor # 月分を出す
+    months = (remain / 30.44).floor # 月を出す
     remain = remain - (months * 30.44).round  # 日数から月分の日数を引いた残りの日数
 
     days_left = remain.to_i
-
+    
     { years: years, months: months, days: days_left }
   end
 end
