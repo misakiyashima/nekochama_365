@@ -14,9 +14,9 @@ class Cat < ApplicationRecord
 
     if months < 12
      (15 * (months / 12)).round
-     elsif months < 24
+    elsif months < 24
      (15 + 9 * ((months - 12) / 12)).round
-     else
+    else
      (24 + 4 * ((months - 24) / 12)).round
     end
   end
@@ -28,10 +28,10 @@ class Cat < ApplicationRecord
     remain = days - (years * 365.25).round  # 年分を引いた残りの日数
 
     months = (remain / 30.44).floor # 月分を出す
-    remain = remain - (months * 30.44).round  #日数から月分の日数を引いた残りの日数
+    remain = remain - (months * 30.44).round  # 日数から月分の日数を引いた残りの日数
 
     days_left = remain.to_i
-    
-    {years: years, months: months, days: days_left}
+
+    { years: years, months: months, days: days_left }
   end
 end
