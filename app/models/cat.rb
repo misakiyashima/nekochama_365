@@ -31,7 +31,7 @@ class Cat < ApplicationRecord
     remain = remain - (months * 30.44).round  # 日数から月分の日数を引いた残りの日数
 
     days_left = remain.to_i
-    
+
     { years: years, months: months, days: days_left }
   end
 end
