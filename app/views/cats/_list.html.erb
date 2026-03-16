@@ -1,8 +1,8 @@
 <% @cats.each do |cat| %>
-  <p><%= cat.name %>（<%= cat.birthday %>）</p>
+  <p><%= cat.name %>（お誕生日：<%= cat.birthday %>）</p>
   <p>生まれて：<%= cat.days_since_birth %> 日</p>
-  <p>ねこ年齢：<%= age = cat.cat_age %>
-             <%= age[:years] %> 年
+  <% age = cat.cat_age %>
+  <p>ねこ年齢：<%= age[:years] %> 年
              <%= age[:months] %> ヶ月
              <%= age[:days] %> 日 </p>
   <p>ひと年齢：<%= cat.cat_age_in_human_years %> 歳 </p>
