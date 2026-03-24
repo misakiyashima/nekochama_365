@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  #devise_for :users
+  # devise_for :users
   root "static_pages#top"
   resources :cats
   devise_for :users
